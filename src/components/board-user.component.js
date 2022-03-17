@@ -26,9 +26,9 @@ export default class BoardUser extends Component {
                         error.message ||
                         error.toString()
                 });
-                if (error.response && error.response.status === 401) {
-                    EventBus.dispatch("logout");
-                }
+                // if (error.response && error.response.status === 401) {
+                //     EventBus.dispatch("logout");
+                // }
             }
         );
     }
