@@ -117,7 +117,7 @@ export default class Register extends Component {
     render() {
         return (
             <div className={"col-md-12"}>
-                <div className={"card car-container"}>
+                <div className={"card card-container"}>
                     <img
                         src={"//ssl.gstatic.com/accounts/ui/avatar_2x.png"}
                         alt={"profile-img"}
@@ -139,7 +139,7 @@ export default class Register extends Component {
                                         name={"username"}
                                         value={this.state.username}
                                         onChange={this.onChangeUsername}
-                                        validation={[required, vusername]}
+                                        validations={[required, vusername]}
                                     />
                                 </div>
                                 <div className={"form-group"}>
@@ -150,7 +150,7 @@ export default class Register extends Component {
                                         name={"email"}
                                         value={this.state.email}
                                         onChange={this.onChangeEmail}
-                                        validation={[required, email]}
+                                        validations={[required, email]}
                                     />
                                 </div>
                                 <div className={"form-group"}>
@@ -161,7 +161,7 @@ export default class Register extends Component {
                                         name={"password"}
                                         value={this.state.password}
                                         onChange={this.onChangePassword}
-                                        validation={[required, vpassword]}
+                                        validations={[required, vpassword]}
                                     />
                                 </div>
                                 <div className={"form-group"}>

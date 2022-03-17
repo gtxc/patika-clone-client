@@ -25,7 +25,8 @@ export default class Login extends Component {
             username: "",
             password: "",
             loading: false,
-            message: ""
+            message: "",
+            successful: false,
         };
     }
 
@@ -51,8 +52,7 @@ export default class Login extends Component {
         if (this.checkBtn.context._errors.length === 0) {
             AuthService.login(this.state.username, this.state.password).then(
                 () => {
-                    this.props.history.push("/profile");
-                    window.location.reload();
+                    window.location.replace("/profile");
                 },
                 error => {
                     const resMessage =
@@ -96,7 +96,7 @@ export default class Login extends Component {
                                 className={"form-control"}
                                 name={"username"}
                                 value={this.state.username}
-                                onChange={"this.onChangeUsername"}
+                                onChange={this.onChangeUsername}
                                 validations={[required]}
                             />
                         </div>
@@ -106,18 +106,18 @@ export default class Login extends Component {
                                 type={"password"}
                                 className={"form-control"}
                                 name={"password"}
-                                value={"this.state.password"}
-                                onChange={"this.onChangePassword"}
+                                value={this.state.password}
+                                onChange={this.onChangePassword}
                                 validations={[required]}
                             />
                         </div>
                         <div className={"form-group"}>
                             <button
                                 className={"btn btn-primary btn-block"}
-                                disabled={"this.state.loading"}
+                                disabled={this.state.loading}
                             >
                                 {this.state.loading && (
-                                    <span className={"spinner-border spinner-border-sm"}></span>
+                                    <span className={"spinner-border spinner-border-sm"}/>
                                 )}
                                 <span>Login</span>
                             </button>
