@@ -1,8 +1,9 @@
 import React, {useRef, useState} from "react";
 import AuthService from "../services/auth.service";
-import Form from "react-validation";
-import Input from "react-validation";
-import CheckButton from "react-validation"
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button"
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const required = (value) => {
     if (!value) {
@@ -59,8 +60,8 @@ const Login = (props) => {
     };
 
     return (
-        <div className={"col-md-12"}>
-            <div className={"card card-container"}>
+        <div className="col-md-12">
+            <div className="card card-container">
                 <img
                     src={"//ssl.gstatic.com/accounts/ui/avatar_2x.png"}
                     alt={"profile-img"}
