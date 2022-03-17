@@ -1,7 +1,8 @@
-import {useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import AuthService from "../services/auth.service";
-import Form from "react-validation/src/components/form";
-import Input from "react-validation/src/components/input";
+import Form from "react-validation";
+import Input from "react-validation";
+import CheckButton from "react-validation"
 
 const required = (value) => {
     if (!value) {
@@ -89,8 +90,21 @@ const Login = (props) => {
                         />
                     </div>
                     <div className={"form-group"}>
-                        <button className={"btn btn-primary btn-block"}/>
+                        <button className={"btn btn-primary btn-block"} disabled={loading}>
+                            {loading && (
+                                <span className={"spinner-border spinner-border-sm"}/>
+                            )}
+                            <span>Login</span>
+                        </button>
                     </div>
+                    {message && (
+                        <div className={"form-group"}>
+                            <div className={"alert alert-danger"} role={"alert"}>
+                                {message}
+                            </div>
+                        </div>
+                    )}
+                    <CheckButton style={{display: "none"}} ref={checkBtn} />
                 </Form>
             </div>
         </div>
