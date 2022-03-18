@@ -12,7 +12,7 @@ import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import "bootstrap/dist/css/bootstrap.min.css";
-import EventBus from "./common/EventBus";
+// import EventBus from "./common/EventBus";
 
 export default class App extends Component {
 
@@ -36,14 +36,14 @@ export default class App extends Component {
             });
         }
 
-        EventBus.on("logout", () => {
-            this.logOut();
-        });
+        // EventBus.on("logout", () => {
+        //     this.logOut();
+        // });
     }
 
-    componentWillMount() {
-        EventBus.remove("logout");
-    }
+    // componentWillMount() {
+    //     EventBus.remove("logout");
+    // }
 
     logOut() {
         AuthService.logout();
