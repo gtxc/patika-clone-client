@@ -32,7 +32,7 @@ const App = () => {
     return (
         <div>
             <nav className={"navbar navbar-expand navbar-dark bg-dark"}>
-                <Link to={"/"} className={"navbar-bran"}>
+                <Link to={"/"} className={"navbar-brand"}>
                     GTXC
                 </Link>
                 <div className={"navbar-nav mr-auto"}>
@@ -50,7 +50,7 @@ const App = () => {
                     )}
                     {showAdminBoard && (
                         <li className={"nav-item"}>
-                            <Link to={"/dev"} className={"nav-lnk"}>
+                            <Link to={"/dev"} className={"nav-link"}>
                                 DEV Board
                             </Link>
                         </li>
@@ -77,7 +77,7 @@ const App = () => {
                         </li>
                     </div>
                 ) : (
-                    <div className={"nav-bar ml-auto"}>
+                    <div className={"navbar-nav ml-auto"}>
                         <li className={"nav-item"}>
                             <Link to={"/login"} className={"nav-link"}>
                                 Login
@@ -93,7 +93,8 @@ const App = () => {
             </nav>
             <div className={"container mt-3"}>
                 <Routes>
-                    <Route exact path={["/", "/home"]} element={<Home />} />
+                    <Route exact path={"/"} element={<Home />} />
+                    <Route exact path={"/home"} element={<Home />} />
                     <Route exact path={"/login"} element={<Login />} />
                     <Route exact path={"/register"} element={<Register />} />
                     <Route exact path={"/profile"} element={<Profile />} />
