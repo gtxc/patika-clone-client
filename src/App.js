@@ -11,6 +11,7 @@ import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
 
+
 const App = () => {
     const [showModeratorBoard, setShowModeratorBoard] = useState(false);
     const [showAdminBoard, setShowAdminBoard] = useState(false);
@@ -26,7 +27,7 @@ const App = () => {
     }, []);
 
     const logOut = () => {
-        AuthService.logOut();
+        AuthService.logout();
     };
 
     return (
