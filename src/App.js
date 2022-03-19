@@ -18,7 +18,7 @@ export default class App extends Component {
 
     constructor(props) {
         super(props);
-        this.logOut = this.logOut.bind(this);
+        this.logout = this.logout.bind(this);
         this.state = {
             showModeratorBoard: false,
             showAdminBoard: false,
@@ -45,7 +45,7 @@ export default class App extends Component {
     //     EventBus.remove("logout");
     // }
 
-    logOut() {
+    logout() {
         AuthService.logout();
         this.setState({
             showModeratorBoard: false,
@@ -98,8 +98,8 @@ export default class App extends Component {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <a href={"/login"} className="nav-link" onClick={this.logOut}>
-                                    LogOut
+                                <a href={"/login"} className="nav-link" onClick={this.logout}>
+                                    Log Out
                                 </a>
                             </li>
                         </div>
@@ -107,7 +107,7 @@ export default class App extends Component {
                         <div className="navbar-nav ml-auto">
                             <li className="nav-item">
                                 <Link to={"/login"} className="nav-link">
-                                    Login
+                                    Log In
                                 </Link>
                             </li>
                             <li className="nav-item">
